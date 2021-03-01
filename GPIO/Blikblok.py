@@ -13,7 +13,7 @@ GPIO.setup(pin, GPIO.OUT)
 # How many times do the LED on and off?
 x = int(input('Wie oft soll die LED blinken? '))
 
-# 
+
 for i in range(x):
     GPIO.output(pin, GPIO.HIGH)
     time.sleep(0.5)
