@@ -1,26 +1,21 @@
-# Import
 import RPi.GPIO as GPIO
-import time as time
+import time
 
 # Setup
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 x = int(0)
+pin = 26 # The GPIO Pin of the LED
 
 # Output Definierung
-GPIO.setup(18, GPIO.OUT)
+GPIO.setup(pin, GPIO.OUT)
 
-# Ende definieren
-y = int(input('Wie oft soll die LED blinken? '))
+# How many times do the LED on and off?
+x = int(input('Wie oft soll die LED blinken? '))
 
-# Program
-while True:
-    x = x + 1
-    GPIO.output(18, GPIO.HIGH)
+# 
+for i in range(x):
+    GPIO.output(pin, GPIO.HIGH)
     time.sleep(0.5)
-    GPIO.output(18, GPIO.LOW)
+    GPIO.output(pin, GPIO.LOW)
     time.sleep(0.5)
-    
-    if(x == y):
-        break
-        
